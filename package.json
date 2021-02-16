@@ -1,0 +1,17 @@
+{
+  "name": "sprestassist",
+  "version": "0.1.0",
+  "description": "library used with axios.js to make SharePoint REST calls more fun",
+  "main": "sprestassit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "axios",
+    "rest",
+    "sharepoint",
+    "api"
+  ],
+  "author": "Scott LaPlante",
+  "license": "MIT"
+}
