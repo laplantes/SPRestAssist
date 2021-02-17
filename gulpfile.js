@@ -1,4 +1,5 @@
-const gulp = require('gulp'),
+const del = require('del'),
+	gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	soucermaps = require('gulp-sourcemaps'),
 	terser = require('gulp-terser'),
@@ -23,5 +24,9 @@ gulp.task('build', () => {
 	return files;
 });
 
+gulp.task('clean', () => {
+	return del('./dist/**')
+})
+
 // default task
-gulp.task('default', gulp.series('build'));
+gulp.task('default', gulp.series('clean', 'build'));
