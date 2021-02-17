@@ -10,7 +10,8 @@
     "axios",
     "rest",
     "sharepoint",
-    "api"
+    "api",
+    "hxr"
   ],
   "author": "Scott LaPlante",
   "license": "MIT",
