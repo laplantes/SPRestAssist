@@ -2,7 +2,11 @@
   "name": "sprestassist",
   "version": "0.1.0",
   "description": "JavaScript library used with axios.js to make SharePoint REST calls more fun. axios.js required separately.",
-  "main": "sprestassit.js",
+  "main": "dist/sprestassit.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laplantes/SPRestAssist"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,10 +15,16 @@
     "rest",
     "sharepoint",
     "api",
-    "hxr"
+    "hxr",
+    "ajax",
+    "promise"
   ],
-  "author": "Scott LaPlante",
+  "homepage": "https://github.com/laplantes/SPRestAssist",
+  "author": "Scott LaPlante <18195024+laplantes@users.noreply.github.com>",
   "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/laplantes/SPRestAssist/issues"
+    },
   "devDependencies": {
     "del": "^6.0.0",
     "gulp": "^4.0.2",
