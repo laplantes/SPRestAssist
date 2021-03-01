@@ -1,3 +1,5 @@
+'use strict';
+
 const del = require('del'),
 	gulp = require('gulp'),
 	rename = require('gulp-rename'),
@@ -6,24 +8,26 @@ const del = require('del'),
 	src = './src/sprestassist.js',
 	destination = './dist';
 
-
-const createDist = (source, destination) => {
+// minify and push file, minified file, and source map to dist folder
+const createDist = (source, dest) => {
 	return gulp.src(source)
-	.pipe(gulp.dest(destination))
+	.pipe(gulp.dest(dest))
 	.pipe(rename(function (path) {
 		path.basename += '.min';
 	}))
 	.pipe(soucermaps.init())
 	.pipe(terser())
 	.pipe(soucermaps.write('./'))
-	.pipe(gulp.dest(destination))
+	.pipe(gulp.dest(dest))
 };
 
+// gulp task to call the createDist function
 gulp.task('build', () => {
 	const files = createDist(src, destination);
 	return files;
 });
 
+// gulp task to remove all files from the dist directory
 gulp.task('clean', () => {
 	return del('./dist/**')
 })
