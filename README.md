@@ -215,7 +215,7 @@ spra.getCurrentUserProps( { url:'https://domain.com/', selectedProperty:`${prope
 });
 
 // request Current User SharePoint Group Memberships
-spra.getCurrentUserGroups( { url:'https://dev.home.mainehealth.org/AxiosAPIExamples' } )
+spra.getCurrentUserGroups( { url:'https://domain.com/' } )
 	.then( (response) => {
 		// Do something with the returned data
 		let groupNames = response.map((item) => {return `'${item.Title}' `}).reduce( (accumulator ,next) => { return accumulator += next; });
