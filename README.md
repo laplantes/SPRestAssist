@@ -51,7 +51,7 @@ If your environment doesn't support ES6 Promises, you can [polyfill](https://git
 - Returns data in JSON format
 - Small simplified method calls so you can focus on your code, and not writing lengthy requests.
 
-### list item methods
+### List item methods
 
 - Create get request to return list items
 - Create get request to return attachment details for list items
@@ -61,7 +61,7 @@ If your environment doesn't support ES6 Promises, you can [polyfill](https://git
 - Create post request to update list item, with or without using the eTag qualifier
 - Create post request to delete a list item, with or without the eTag qualifier
 
-### library methods
+### Library methods
 
 - Create get request to return the details of a picture library
 - Create get request to return the details of library files
