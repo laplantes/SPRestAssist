@@ -49,7 +49,7 @@ If your environment doesn't support ES6 Promises, you can [polyfill](https://git
 - ES2015 support
 - Named feature imports supported
 - Returns data in JSON format
-- Small simplified method calls so you can focus on your code, and not writing lengthy requests.
+- Small simplified method calls so you can focus on your code, and not writing lengthy requests
 
 ### List item methods
 
@@ -350,7 +350,7 @@ spra.deleteItem(deleteObject)
 
 > **NOTE**: The following is the Response Schema provided by axios and is still exposed while using sprestasssist
 
-The response for a request contains the following information.
+The response for a request contains the following information
 
 ```js
 {
@@ -397,11 +397,11 @@ spra.method(<object>)
 
 Breaking changes may be released with a new minor version until sprestassist extends to release `1.0.0`
 
-For example, `0.1.1`, and `0.1.4` will not have any breaking changes, but `0.2.0` may have breaking changes.
+For example, `0.1.1`, and `0.1.4` will not have any breaking changes, but `0.2.0` may have breaking changes
 
 ## Credits
 
-A huge shoutout goes to the those who created and maintain [axios](https://www.npmjs.com/package/axios)! Without all of their hard work this would not have been possible.
+A huge shoutout goes to the those who created and maintain [axios](https://www.npmjs.com/package/axios)! Without all of their hard work this would not have been possible
 
 ## License
 
