@@ -243,7 +243,10 @@ spra.verifyCurrentUserGroupMembership( { url:'https://domain.com/', groupName: `
 
 Requesting multiple REST calls and waiting for all promises to resolve before proceeding
 
-This is an axios method, this examples shows how this can be done utilizing sprestassist
+>**CAUTION**: The method below has been deprecated. Please see the axios documentation for more information.
+>Instead please us Promise.all, or manage this with custom code.
+
+<del>This is an axios method, this examples shows how this can be  done utilizing sprestassist</del>
 
 ```js
 axios.all( [spra.getItems({url:'https://domain.com/', list:'MyList', action:'items'}), spra.getItems({url:'https://domain.com/', list:'MyList', action:'fields', query:`$filter=EntityPropertyName eq '<column name>'`}) ])
