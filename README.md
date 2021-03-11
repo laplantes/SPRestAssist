@@ -268,6 +268,7 @@ axios.all( [spra.getItems({url:'https://domain.com/', list:'MyList', action:'ite
 >Parameters required for the createItem method:
 >
 >Pass the method an object containing the following
+>
 >- url: [required] the url of the base SharePoint site
 >- list: [required] list or library name
 >- data: [required] object containing column names and values stringified
