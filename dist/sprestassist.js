@@ -1,5 +1,7 @@
 'use strict'
 
+import * as axios from 'axios';
+
 /**
  * Setup the initial axios config with headers required for all SharePoint CRUD operations 
  */
