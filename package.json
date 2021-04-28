@@ -2,7 +2,8 @@
   "name": "sprestassist",
   "version": "0.1.1",
   "description": "JavaScript library used with axios.js to make SharePoint REST calls more fun. axios.js required separately.",
-  "main": "dist/sprestassit.min.js",
+  "browser": "dist/sprestassist.min.js",
+  "main": "dist/sprestassist.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/laplantes/SPRestAssist"
@@ -31,5 +32,8 @@
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
   }
 }
