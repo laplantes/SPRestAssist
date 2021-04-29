@@ -3,12 +3,12 @@
 [![install size](https://packagephobia.now.sh/badge?p=sprestassist)](https://packagephobia.now.sh/result?p=sprestassist)
 [![npm downloads](https://img.shields.io/npm/dm/sprestassist.svg?style=flat-square)](http://npm-stat.com/charts.html?package=sprestassist)
 
-sprestasssist is a modern, light weight, helper library for creating SharePoint 2019 on premises REST calls utilizing axios.js
-sprestasssit is based on the REST architecture and the SharePoint 2019 on premises API. The library is not extensive, it was built with the purpose of being light weight while serving the most common SharePoint developer needs.
+sprestassist is a modern, light weight, helper library for creating SharePoint 2019 on premises REST calls utilizing axios.js
+sprestassist is based on the REST architecture and the SharePoint 2019 on premises API. The library is not extensive, it was built with the purpose of being light weight while serving the most common SharePoint developer needs.
 This document will not cover all of the possible query options such as filter, sort, expand, etc. For more details please see [Get to know the SharePoint REST service](https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service?tabs=csom)
 At the time this file was written the current version of axios is 0.21.1, other versions have not been tested
 
->If you are used to using jQuery and SPServices, using sprestassist will likely feel fimiliar to you.
+>If you are used to using jQuery and SPServices, using sprestassist will likely feel familiar to you.
 
 [axios is a promise based HTTP client for the browser and node.js](https://github.com/axios/axios)
 
@@ -70,7 +70,7 @@ If your environment doesn't support ES6 Promises, you can [polyfill](https://git
 
 - Create get request to return one or all currently logged in users properties
 - Create get request to return all of the SharePoint groups the currently logged in user is a member of
-- Create request passing in a SharePoint group name and return a bolean value
+- Create request passing in a SharePoint group name and return a boolean value
 
 ## Get Started
 
@@ -100,15 +100,15 @@ Using unpkg CDN:
 
 ## Setup the environment
 
-> **NOTE**: axios is required to use this library
+> **NOTE**: axios is required to use this library. As of V0.1.2 axios is included as a dependency and will be imported using a bundler such as Webpack. Without a bundler, adding axios separately to your project is still required.
 
 - [Include axios in your project by preferred method (NPM, Bower, Yarn, etc.), or CND. See the axios documentation for more information](https://github.com/axios/axios)
 - Import sprestassist.min.js as seen below
 
 ```js
-import * from spreastassist as spra from <installed location/dist/sprestasssist.min.js>;
+import * from sprestassist as spra from <installed location/dist/sprestassist.min.js>;
 OR use feature imports
-import { getItems, createItem, updateItem, deleteItem, getCurrentUserProps, getCurrentUserGroups, verifyCurrentUserGroupMembership } from <installed location/dist/sprestasssist.min.js>;
+import { getItems, createItem, updateItem, deleteItem, getCurrentUserProps, getCurrentUserGroups, verifyCurrentUserGroupMembership } from <installed location/dist/sprestassist.min.js>;
 ```
 
 ## Examples
@@ -279,7 +279,7 @@ axios.all( [spra.getItems({url:'https://domain.com/', list:'MyList', action:'ite
 
 ```js
 // creates a new list item
-// Pass in an object containing the required properties - url, list name, data (the payload formated as a string)
+// Pass in an object containing the required properties - url, list name, data (the payload formatted as a string)
 const title = 'This is going to be used to fill the title field',
 	choice = 'seven'; // this will be used to fill in a column field that is a column type of choice
 // These are example fields, your list and your data will determine which fields you assign
@@ -314,7 +314,7 @@ const id = 27,
 spra.updateItem({url:'https://domain.com/', list:'My List', data:`'Title': '${title}', 'field2': '${field2}'`, updateId:`${id}`})
 	.then( () => {
 		// There is no response data for an update
-		console.log('%cThe Item has been updated. There is no response to an update. Check the item to verifiy.', 'color: green; font-size: 20px',);
+		console.log('%cThe Item has been updated. There is no response to an update. Check the item to verify.', 'color: green; font-size: 20px',);
 	})
 	.catch( (error) => {
 		// should there be an error, do something with it
@@ -352,7 +352,7 @@ spra.deleteItem(deleteObject)
 
 ## Response Schema
 
-> **NOTE**: The following is the Response Schema provided by axios and is still exposed while using sprestasssist
+> **NOTE**: The following is the Response Schema provided by axios and is still exposed while using sprestassist
 
 The response for a request contains the following information
 
@@ -405,7 +405,7 @@ For example, `0.1.1`, and `0.1.4` will not have any breaking changes, but `0.2.0
 
 ## Credits
 
-A huge shoutout goes to the those who created and maintain [axios](https://www.npmjs.com/package/axios)! Without all of their hard work this would not have been possible
+A huge shout out goes to the those who created and maintain [axios](https://www.npmjs.com/package/axios)! Without all of their hard work this would not have been possible
 
 ## License
 
