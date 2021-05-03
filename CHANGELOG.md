@@ -49,7 +49,7 @@ No fixes
 
 ### Changed
 
-No changes
+- axios added as a dependency
 
 ### Fixed
 
