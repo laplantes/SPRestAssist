@@ -4,7 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/sprestassist.svg?style=flat-square)](http://npm-stat.com/charts.html?package=sprestassist)
 
 sprestassist is a modern, light weight, helper library for creating SharePoint 2019 on premises REST calls utilizing axios.js
-sprestassist is based on the REST architecture and the SharePoint 2019 on premises API. The library is not extensive, it was built with the purpose of being light weight while serving the most common SharePoint developer needs.
+sprestassist is based on the REST architecture and the SharePoint 2019 on premises API. The library is not exhaustive, it was built with the purpose of being light weight while serving the most common SharePoint developer needs.
 This document will not cover all of the possible query options such as filter, sort, expand, etc. For more details please see [Get to know the SharePoint REST service](https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service?tabs=csom)
 At the time this file was written the current version of axios is 0.21.1, other versions have not been tested
 
@@ -124,9 +124,10 @@ Examples will not use named feature imports. Feature imports are supported & rec
 >- list: [required] list or library name
 >- action: [required] items or fields (items when dealing with list or library items, fields when dealing with columns)
 >- query: [optional] query string to include, such as sort, orderby, filter, etc
+>- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
 
 ```js
-// Pass in an object with the following paramerters {url:<base url>, list:<list name>, action<see note below>, query:<querystring to be added to the REST call>}
+// Pass in an object with the following parameters {url:<base url>, list:<list name>, action<see note below>, query:<querystring to be added to the REST call>}
 // The action is either 'items' OR 'fields' - for list items it will be 'items', for getting column information it will be 'fields'
 
 // requests all list items
@@ -272,6 +273,7 @@ axios.all( [spra.getItems({url:'https://domain.com/', list:'MyList', action:'ite
 >- url: [required] the url of the base SharePoint site
 >- list: [required] list or library name
 >- data: [required] object containing column names and values stringified
+>- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
 
 [For information about eTags see the Microsoft Documentation](https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints)
 
@@ -284,7 +286,7 @@ const title = 'This is going to be used to fill the title field',
 	choice = 'seven'; // this will be used to fill in a column field that is a column type of choice
 // These are example fields, your list and your data will determine which fields you assign
 // the data parameter must be a string, all properties and keys must be wrapped in quotes or single quotes
-spra.createItem({url:'https://domain.com/', list:'My List', data:`'Title': '${title}', 'choose': '${choice}'`})
+spra.createItem({url:'https://domain.com/', list:'My List', data:`'Title': '${title}', 'choose': '${choice}'`, verbose: 'true'})
 	.then( (response) => {
 		// Do something with the response
 		console.log('%cThe item has been created with a Title of', 'color: green; font-size: 20px', response.data.d.Title);
@@ -306,6 +308,7 @@ spra.createItem({url:'https://domain.com/', list:'My List', data:`'Title': '${ti
 >- list: [required] list or library name
 >- data: [required] object containing column names and values stringified
 >- etag: [optional] eTag of the item to be updated (omit this field if you wish to overwrite the item without verifying version)
+>- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
 
 ```js
 const id = 27, 
@@ -331,6 +334,7 @@ Parameters required for the deleteItem method:
 >- list: list or library name
 >- data: object containing column names and values stringified
 >- etag: eTag of the item to be updated (omit this field if you wish to delete the item without verifying version)
+>- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
 
 ```js
 const id = 27,
