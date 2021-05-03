@@ -38,3 +38,36 @@ No changes
 ### Fixed
 
 No fixes
+
+---
+
+## [0.1.3] - 04-30-2021
+
+### Added
+
+- Updated README.md
+
+### Changed
+
+No changes
+
+### Fixed
+
+- Syntax errors in README
+
+---
+
+## [0.1.4] - 05-03-2021
+
+### Added
+
+- Added option to specify minimal meta or verbose meta data to be returned from SharePoint
+- Updated README.md
+
+### Changed
+
+- Updated README with new option for minimal meta or verbose meta data
+
+### Fixed
+
+No Fixes
