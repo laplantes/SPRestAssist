@@ -3,7 +3,7 @@
 const del = require('del'),
 	gulp = require('gulp'),
 	rename = require('gulp-rename'),
-	soucermaps = require('gulp-sourcemaps'),
+	sourcemaps = require('gulp-sourcemaps'),
 	terser = require('gulp-terser'),
 	src = './src/sprestassist.js',
 	destination = './dist';
@@ -15,9 +15,9 @@ const createDist = (source, dest) => {
 	.pipe(rename(function (path) {
 		path.basename += '.min';
 	}))
-	.pipe(soucermaps.init())
+	.pipe(sourcemaps.init())
 	.pipe(terser())
-	.pipe(soucermaps.write('./'))
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(dest))
 };
 
