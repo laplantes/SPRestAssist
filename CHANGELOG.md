@@ -66,6 +66,7 @@ No fixes
 
 ### Changed
 
+- Removed axios from being a dependency to the project as this was causing issues with script tags. More work needs to be done prior to creating an import and depenency for axios when using bundlers
 - Updated README with new option for minimal meta or verbose meta data
 
 ### Fixed
