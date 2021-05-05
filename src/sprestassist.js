@@ -48,8 +48,8 @@ const getDigestValue = (contextUrl) => {
 export const getItems = (props) => {
 	const { url, list, action, query = '', verbose=false } = props;
 	let config;
-	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
-	return axios.get(`${url}/_api/web/lists/getByTitle('${list}')/${action}?${query}`);
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : config = JSON.parse(JSON.stringify(axiosConfigMin));
+	return axios.get(`${url}/_api/web/lists/getByTitle('${list}')/${action}?${query}`, config);
 };
 
 
@@ -61,7 +61,7 @@ export const getItems = (props) => {
 export const createItem = async (props) => {
 	const { url, list, data, verbose=false } = props;
 	let config;
-	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : config = JSON.parse(JSON.stringify(axiosConfigMin));
 	const entityNamePromise = await getListItemEntityTypeFullName(url, list);
 	const digestValuePromise = await getDigestValue(url);
 	const entityName = entityNamePromise.data.ListItemEntityTypeFullName;
@@ -79,7 +79,7 @@ export const createItem = async (props) => {
 export const updateItem = async (props) => {
 	const { url, list, data, updateId, etag = "*", verbose=false } = props;
 	let config;
-	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : config = JSON.parse(JSON.stringify(axiosConfigMin));
 	const entityNamePromise = await getListItemEntityTypeFullName(url, list);
 	const digestValuePromise = await getDigestValue(url);
 	const entityName = entityNamePromise.data.ListItemEntityTypeFullName;
@@ -99,7 +99,7 @@ export const updateItem = async (props) => {
 export const deleteItem = async (props) => {
 	const { url, list, itemId, etag = "*", verbose=false } = props;
 	let config;
-	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : config = JSON.parse(JSON.stringify(axiosConfigMin));
 	const digestValuePromise = await getDigestValue(url);
 	config.headers['X-RequestDigest'] = digestValuePromise.data.FormDigestValue;
 	config.headers["IF-MATCH"] = `${etag}`;
@@ -115,7 +115,7 @@ export const deleteItem = async (props) => {
 export const getCurrentUserProps = (props) => {
 	const { url, selectedProperty, verbose=false } = props;
 	let config;
-	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : config = JSON.parse(JSON.stringify(axiosConfigMin));
 	return axios.get(`${url}/_api/SP.UserProfiles.PeopleManager/GetMyProperties/${selectedProperty}`);
 };
 
