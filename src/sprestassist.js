@@ -115,9 +115,9 @@ export const deleteItem = async (props) => {
  * @param {object} props object containing the options
  */
 export const getCurrentUserProps = (props) => {
+	const { url, selectedProperty, verbose="false" } = props;
 	let config;
 	verbose ? config = axiosConfigVerbose : axiosConfigMin;
-	const { url, selectedProperty, verbose="false" } = props;
 	return axios.get(`${url}/_api/SP.UserProfiles.PeopleManager/GetMyProperties/${selectedProperty}`);
 };
 
