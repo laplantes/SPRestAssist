@@ -100,7 +100,7 @@ Using unpkg CDN:
 
 ## Setup the environment
 
-> **NOTE**: axios is required to use this library. As of V0.1.2 axios is included as a dependency and will be imported using a bundler such as Webpack. Without a bundler, adding axios separately to your project is still required.
+> **NOTE**: axios is required to use this library.
 
 - [Include axios in your project by preferred method (NPM, Bower, Yarn, etc.), or CND. See the axios documentation for more information](https://github.com/axios/axios)
 - Import sprestassist.min.js as seen below
@@ -124,7 +124,7 @@ Examples will not use named feature imports. Feature imports are supported & rec
 >- list: [required] list or library name
 >- action: [required] items or fields (items when dealing with list or library items, fields when dealing with columns)
 >- query: [optional] query string to include, such as sort, orderby, filter, etc
->- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
+>- verbose: [optional] boolean determines whether  the returned metadata will be verbose or minimal (minimal is default)
 
 ```js
 // Pass in an object with the following parameters {url:<base url>, list:<list name>, action<see note below>, query:<querystring to be added to the REST call>}
@@ -273,7 +273,7 @@ axios.all( [spra.getItems({url:'https://domain.com/', list:'MyList', action:'ite
 >- url: [required] the url of the base SharePoint site
 >- list: [required] list or library name
 >- data: [required] object containing column names and values stringified
->- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
+>- verbose: [optional] boolean determines whether  the returned metadata will be verbose or minimal (minimal is default)
 
 [For information about eTags see the Microsoft Documentation](https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints)
 
@@ -308,7 +308,7 @@ spra.createItem({url:'https://domain.com/', list:'My List', data:`'Title': '${ti
 >- list: [required] list or library name
 >- data: [required] object containing column names and values stringified
 >- etag: [optional] eTag of the item to be updated (omit this field if you wish to overwrite the item without verifying version)
->- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
+>- verbose: [optional] boolean determines whether  the returned metadata will be verbose or minimal (minimal is default)
 
 ```js
 const id = 27, 
@@ -334,7 +334,7 @@ Parameters required for the deleteItem method:
 >- list: list or library name
 >- data: object containing column names and values stringified
 >- etag: eTag of the item to be updated (omit this field if you wish to delete the item without verifying version)
->- verbose: [optional] boolean determines weather the returned metadata will be verbose or minimal (minimal is default)
+>- verbose: [optional] boolean determines whether  the returned metadata will be verbose or minimal (minimal is default)
 
 ```js
 const id = 27,
