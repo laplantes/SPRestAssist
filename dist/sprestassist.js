@@ -7,7 +7,7 @@ import * as axios from 'axios';
  */
 const axiosConfigMin = {
 	headers: {
-		'Accept': 'application/json;',
+		'Accept': 'application/json;odata=minimalmetadata',
 		'content-type': 'application/json;odata=verbose'
 	},
 };
@@ -48,9 +48,9 @@ const getDigestValue = (contextUrl) => {
  * @return {promise}
  */
 export const getItems = (props) => {
-	const { url, list, action, query = '', verbose="false" } = props;
+	const { url, list, action, query = '', verbose=false } = props;
 	let config;
-	verbose ? config = axiosConfigVerbose : axiosConfigMin;
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
 	return axios.get(`${url}/_api/web/lists/getByTitle('${list}')/${action}?${query}`);
 };
 
@@ -61,9 +61,9 @@ export const getItems = (props) => {
  * @param {object} props object containing the options
  */
 export const createItem = async (props) => {
-	const { url, list, data, verbose="false" } = props;
+	const { url, list, data, verbose=false } = props;
 	let config;
-	verbose ? config = axiosConfigVerbose : axiosConfigMin;
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
 	const entityNamePromise = await getListItemEntityTypeFullName(url, list);
 	const digestValuePromise = await getDigestValue(url);
 	const entityName = entityNamePromise.data.ListItemEntityTypeFullName;
@@ -79,9 +79,9 @@ export const createItem = async (props) => {
  * @param {object} props object containing the options
  */
 export const updateItem = async (props) => {
-	const { url, list, data, updateId, etag = "*", verbose="false" } = props;
+	const { url, list, data, updateId, etag = "*", verbose=false } = props;
 	let config;
-	verbose ? config = axiosConfigVerbose : axiosConfigMin;
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
 	const entityNamePromise = await getListItemEntityTypeFullName(url, list);
 	const digestValuePromise = await getDigestValue(url);
 	const entityName = entityNamePromise.data.ListItemEntityTypeFullName;
@@ -99,9 +99,9 @@ export const updateItem = async (props) => {
  * @param {object} props object containing the options
  */
 export const deleteItem = async (props) => {
-	const { url, list, itemId, etag = "*", verbose="false" } = props;
+	const { url, list, itemId, etag = "*", verbose=false } = props;
 	let config;
-	verbose ? config = axiosConfigVerbose : axiosConfigMin;
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
 	const digestValuePromise = await getDigestValue(url);
 	config.headers['X-RequestDigest'] = digestValuePromise.data.FormDigestValue;
 	config.headers["IF-MATCH"] = `${etag}`;
@@ -115,9 +115,9 @@ export const deleteItem = async (props) => {
  * @param {object} props object containing the options
  */
 export const getCurrentUserProps = (props) => {
-	const { url, selectedProperty, verbose="false" } = props;
+	const { url, selectedProperty, verbose=false } = props;
 	let config;
-	verbose ? config = axiosConfigVerbose : axiosConfigMin;
+	verbose ? config = JSON.parse(JSON.stringify(axiosConfigVerbose)) : JSON.parse(JSON.stringify(axiosConfigMin));
 	return axios.get(`${url}/_api/SP.UserProfiles.PeopleManager/GetMyProperties/${selectedProperty}`);
 };
 
