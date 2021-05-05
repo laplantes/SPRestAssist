@@ -19,7 +19,7 @@ At the time this file was written the current version of axios is 0.21.1, other 
 - [Features](#features)
 - [Get Started](#get-started)
   - [Installing](#installing)
-  - [Using a CDN](#CDN)
+  - [Using a CDN](#cdn)
 - [Examples](#examples)
   - [Performing a GET request](#performing-a-get-request)
   - [Performing multiple concurrent requests](#performing-multiple-concurrent-requests)
