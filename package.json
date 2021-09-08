@@ -1,6 +1,6 @@
 {
   "name": "sprestassist",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "JavaScript library used with axios.js to make SharePoint REST calls more fun. axios.js required separately.",
   "browser": "dist/sprestassist.min.js",
   "main": "dist/sprestassist.min.js",
