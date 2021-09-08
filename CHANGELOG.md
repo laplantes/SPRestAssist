@@ -89,3 +89,17 @@ Nothing added
 ### Fixed
 
 No Fixes
+
+## [0.1.6] - 09-08-2021
+
+### Added
+
+Nothing added
+
+### Changed
+
+- Production version created
+
+### Fixed
+
+No Fixes
