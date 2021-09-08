@@ -66,8 +66,25 @@ No fixes
 
 ### Changed
 
-- Removed axios from being a dependency to the project as this was causing issues with script tags. More work needs to be done prior to creating an import and depenency for axios when using bundlers
+- Removed axios from being a dependency to the project as this was causing issues with script tags. More work needs to be done prior to creating an import and dependency for axios when using bundlers
 - Updated README with new option for minimal meta or verbose meta data
+
+### Fixed
+
+No Fixes
+
+---
+
+## [0.1.5] - 09-08-2021
+
+### Added
+
+Nothing added
+
+### Changed
+
+- Config object creation changed from an object literal assignment to a factory function
+- README.md syntax corrections
 
 ### Fixed
 
