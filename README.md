@@ -106,7 +106,7 @@ Using unpkg CDN:
 - Import sprestassist.min.js as seen below
 
 ```js
-import * from sprestassist as spra from <installed location/dist/sprestassist.min.js>;
+import * as spra from <installed location/dist/sprestassist.min.js>;
 OR use feature imports
 import { getItems, createItem, updateItem, deleteItem, getCurrentUserProps, getCurrentUserGroups, verifyCurrentUserGroupMembership } from <installed location/dist/sprestassist.min.js>;
 ```
