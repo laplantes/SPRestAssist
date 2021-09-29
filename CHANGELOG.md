@@ -103,3 +103,17 @@ Nothing added
 ### Fixed
 
 No Fixes
+
+## [0.1.7] - 09-29-2021
+
+### Added
+
+Nothing added
+
+### Changed
+
+- README.md syntax corrections
+
+### Fixed
+
+No Fixes
