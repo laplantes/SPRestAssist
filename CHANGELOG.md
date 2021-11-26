@@ -117,3 +117,17 @@ Nothing added
 ### Fixed
 
 No Fixes
+
+## [0.1.8] - 11-26-2021
+
+### Added
+
+Nothing added
+
+### Changed
+
+- README.md syntax corrections
+
+### Fixed
+
+No Fixes

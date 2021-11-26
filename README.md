@@ -286,7 +286,7 @@ const title = 'This is going to be used to fill the title field',
 	choice = 'seven'; // this will be used to fill in a column field that is a column type of choice
 // These are example fields, your list and your data will determine which fields you assign
 // the data parameter must be a string, all properties and keys must be wrapped in quotes or single quotes
-spra.createItem({url:'https://domain.com/', list:'My List', data:`'Title': '${title}', 'choose': '${choice}'`, verbose: 'true'})
+spra.createItem({url:'https://domain.com/', list:'My List', data:`'Title': '${title}', 'choose': '${choice}'`, verbose: true})
 	.then( (response) => {
 		// Do something with the response
 		console.log('%cThe item has been created with a Title of', 'color: green; font-size: 20px', response.data.d.Title);
